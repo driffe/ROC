@@ -3,7 +3,14 @@ import java.awt.*;
 import java.util.*;
 
 public class Map {
+    int[][] map;
+
     JFrame frame = new JFrame("Hexxagon");
+
+    public int[][] getMap() {
+        return map;
+    }
+
     public void Board() {
         frame.setVisible(true);
         frame.setSize(1280, 828);
