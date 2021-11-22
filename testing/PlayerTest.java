@@ -75,4 +75,103 @@ class PlayerTest {
 
         assertArrayEquals(expected, map.getMap());
     }
+
+    @Test
+    void checkIfLegalMove_basicMovementValid() {
+        Player player = new Player();
+        Map map = new Map();
+        map.map = new int[][]
+                {
+                        {1, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0}
+                };
+
+        boolean valid =  player.checkIfLegalMove(0, map, 0,0, 0,1);
+
+        assertTrue(valid);
+    }
+    @Test
+    void checkIfLegalMove_outOfBounds() {
+        Player player = new Player();
+        Map map = new Map();
+        map.map = new int[][]
+                {
+                        {1, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0}
+                };
+
+        boolean valid =  player.checkIfLegalMove(0, map, 0,0, 0,-1);
+
+        assertFalse(valid);
+    }
+    @Test
+    void checkIfLegalMove_outOfBoundsTooBig() {
+        Player player = new Player();
+        Map map = new Map();
+        map.map = new int[][]
+                {
+                        {1, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0}
+                };
+
+        boolean valid =  player.checkIfLegalMove(0, map, 100,0, 0,0);
+
+        assertFalse(valid);
+    }
+
+    @Test
+    void checkIfLegalMove_anotherPlayer() {
+        Player player = new Player();
+        Map map = new Map();
+        map.map = new int[][]
+                {
+                        {1, 1, 0, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0}
+                };
+
+        boolean valid =  player.checkIfLegalMove(0, map, 0,0, 0,1);
+
+        assertFalse(valid);
+    }
+    @Test
+    void checkIfLegalMove_2JumpValid() {
+        Player player = new Player();
+        Map map = new Map();
+        map.map = new int[][]
+                {
+                        {1, 1, 0, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0}
+                };
+
+        boolean valid =  player.checkIfLegalMove(0, map, 0,0, 0,2);
+
+        assertTrue(valid);
+    }
+
+    @Test
+    void checkIfLegalMove_invalidThreeJump() {
+        Player player = new Player();
+        Map map = new Map();
+        map.map = new int[][]
+                {
+                        {1, 1, 0, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0}
+                };
+
+        boolean valid =  player.checkIfLegalMove(0, map, 0,0, 0,3);
+
+        assertFalse(valid);
+    }
 }

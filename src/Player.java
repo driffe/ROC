@@ -1,4 +1,13 @@
 public class Player {
+    public boolean checkIfLegalMove(int turn, Map map, int x1, int y1, int x2, int y2) {
+        if(Math.abs(x1-x2) > 2 || Math.abs(y1-y2) > 2) return false;
+        int[][] m = map.getMap();
+        if(x1 < 0 || x2 < 0 || y1 < 0 || y2 < 0 || x1 >= m.length || x2 > m.length || y1 >= m[x1].length || y2 >= m[x2].length) return false;
+        int pTurn = (turn % 2) + 1;
+        if(m[x1][y1] != pTurn) return false;
+        return m[x2][y2] == 0;
+    }
+
     public void move(Map map, int x1, int y1, int x2, int y2) {
         //For now we are asserting that x1,y1,x2, and y2 are valid moves.
         int[][] m = map.getMap();
