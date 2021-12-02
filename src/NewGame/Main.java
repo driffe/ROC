@@ -20,9 +20,8 @@ public class Main {
         JFrame frame = new JFrame("Omok");
         Omok o = new Omok();
         Menu m = new Menu();
-
-        o.board(frame);
-        o.omakMap(mapArr, frame, map);
+        OmokBoard.board(frame);
+        OmokBoard.omakMap(mapArr, frame, map);
         m.createMenu();
     }
 }
