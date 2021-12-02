@@ -10,7 +10,7 @@ public class Omok implements OmokInterface{
     static int outputY = 0;
     static int turn = 1;
 
-    //Give turn to  players
+    //Give turn to players
     public int playerTurn(int turn) {
         if(turn % 2 == 1) {
             return 1;
@@ -38,7 +38,7 @@ public class Omok implements OmokInterface{
                 count++;
             }
         } catch (ArrayIndexOutOfBoundsException e) {
-            return 0;
+            System.out.println("Something Worong");
         }
         //If there are five same color on map, that player is winner
         if(count == 5) {
@@ -57,7 +57,7 @@ public class Omok implements OmokInterface{
                 count++;
             }
         } catch (ArrayIndexOutOfBoundsException e) {
-            return 0;
+            System.out.println("Something Worong");
         }
 
         if(count == 5) {
@@ -76,11 +76,10 @@ public class Omok implements OmokInterface{
                 count++;
             }
         } catch (ArrayIndexOutOfBoundsException e) {
-            return 0;
+            System.out.println("Something Worong");
         }
         //If there are five same color on map, that player is winner
         if(count == 5) {
-
             return 1;
         }
 
@@ -97,7 +96,7 @@ public class Omok implements OmokInterface{
                 count++;
             }
         } catch (ArrayIndexOutOfBoundsException e) {
-            return 0;
+            System.out.println("Something Worong");
         }
         //If there are five same color on map, that player is winner
         if(count == 5) {
@@ -164,7 +163,8 @@ public class Omok implements OmokInterface{
                             paintRed(mapArr, outputY, outputX);
                             map[outputY][outputX] = 1;
                             if(checkWinner(map) == 1) {
-                                JOptionPane.showMessageDialog(null, "end");
+                                JOptionPane.showMessageDialog(null, "Player1(Red) is winner");
+                                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                             }
                             turn = turn + 1;
                         }
@@ -178,7 +178,8 @@ public class Omok implements OmokInterface{
                             paintYellow(mapArr, outputY, outputX);
                             map[outputY][outputX] = 2;
                             if(checkWinner(map) == 1) {
-                                JOptionPane.showMessageDialog(null, "end");
+                                JOptionPane.showMessageDialog(null, "Player2(yellow) is winner");
+                                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                             }
                             turn = turn + 1;
                         }
