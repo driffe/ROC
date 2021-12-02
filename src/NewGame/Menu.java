@@ -42,10 +42,10 @@ public class Menu extends JFrame implements ActionListener {
     {
         String s = e.getActionCommand();
         if(s.equalsIgnoreCase("description")) {
-            label.setText("We made Omok game When you satisfied the winning condition, End the program.");
+            label.setText("We made Omok game. When you satisfied the winning condition, End the program.");
 
         } else if(s.equalsIgnoreCase("rule")) {
-            label.setText(("Make 5 in a row (row, column, diagonal) The Red start first."));
+            label.setText(("Make first 5 same color in a row, column, diagonal. The Red start first."));
         }
 
         // set the label to the menuItem that is selected
