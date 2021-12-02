@@ -10,7 +10,7 @@ public class Omok implements OmokInterface{
     static int outputY = 0;
     static int turn = 1;
 
-    //Give turn to players
+    //Give turn to  players
     public int playerTurn(int turn) {
         if(turn % 2 == 1) {
             return 1;
