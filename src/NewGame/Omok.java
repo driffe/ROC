@@ -100,7 +100,7 @@ public class Omok implements OmokInterface{
                             map[outputY][outputX] = 1;
                             if(checkWinner(map) == 1) {
                                 JOptionPane.showMessageDialog(null, "Player1(Red) is winner");
-                                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                System.exit(0);
                             }
                             turn = turn + 1;
                         }
@@ -115,7 +115,7 @@ public class Omok implements OmokInterface{
                             map[outputY][outputX] = 2;
                             if(checkWinner(map) == 1) {
                                 JOptionPane.showMessageDialog(null, "Player2(yellow) is winner");
-                                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                System.exit(0);
                             }
                             turn = turn + 1;
                         }
