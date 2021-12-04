@@ -3,11 +3,11 @@ package NewGame;
 import javax.swing.*;
 import java.awt.*;
 
-public class OmokBoard {
+public class OmokView {
     JButton[][] mapArr;
     JFrame frame;
     OmokController controller;
-    OmokBoard(JButton[][] mapArr, JFrame frame) {
+    OmokView(JButton[][] mapArr, JFrame frame) {
         this.mapArr = mapArr;
         this.frame = frame;
 

@@ -18,8 +18,8 @@ public class Main {
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
         };
         JFrame frame = new JFrame("Omok");
-        Omok o = new Omok(map);
-        OmokBoard board = new OmokBoard(mapArr, frame);
+        OmokModel o = new OmokModel(map);
+        OmokView board = new OmokView(mapArr, frame);
 
         Menu m = new Menu();
         m.createMenu();

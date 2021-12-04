@@ -3,35 +3,35 @@ package NewGame;
 import javax.swing.*;
 
 public class OmokController {
-    Omok omok;
-    OmokBoard omokBoard;
-    OmokController(Omok omok, OmokBoard omokBoard) {
-        this.omok = omok;
-        this.omokBoard =omokBoard;
-        omokBoard.controller = this;
-        omokBoard.board();
-        omokBoard.omakMap();
+    OmokModel omokModel;
+    OmokView omokView;
+    OmokController(OmokModel omokModel, OmokView omokView) {
+        this.omokModel = omokModel;
+        this.omokView = omokView;
+        omokView.controller = this;
+        omokView.board();
+        omokView.omakMap();
     }
     public void eventButton(int i, int j) {
-        if(omok.getSquare(i,j) != 0) {
+        if(omokModel.getSquare(i,j) != 0) {
             JOptionPane.showMessageDialog(null, "This is already occupied");
             return;
         }
-        omok.updateSquare(i, j);
-        if(omok.playerTurn() == 1) {
-            omokBoard.paintRed(i,j);
-            if(omok.checkWinner(i,j)) {
+        omokModel.updateSquare(i, j);
+        if(omokModel.playerTurn() == 1) {
+            omokView.paintRed(i,j);
+            if(omokModel.checkWinner(i,j)) {
                 JOptionPane.showMessageDialog(null, "Player1(Red) is winner");
                 System.exit(0);
             }
         } else {
-            omokBoard.paintYellow(i,j);
-            if(omok.checkWinner(i,j)) {
+            omokView.paintYellow(i,j);
+            if(omokModel.checkWinner(i,j)) {
                 JOptionPane.showMessageDialog(null, "Player2(Yellow) is winner");
                 System.exit(0);
             }
         }
-        omok.updateTurn();
+        omokModel.updateTurn();
         System.out.println("------------------------------------");
     }
 }

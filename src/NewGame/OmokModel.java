@@ -5,11 +5,11 @@ import java.awt.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class Omok {
+public class OmokModel {
     private int turn = 1;
     private RowDirection[] dirs;
     private int[][] map;
-    Omok(int[][] map){
+    OmokModel(int[][] map){
         this.map = map;
         initDirs();
     }
