@@ -3,14 +3,21 @@ package NewGame;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/**
+ *Class for showing the menu to players. It contains the Description of our project and rule of the game.
+ * @author Seyoung Oh
+ * @author Dominic Reed
+ * @author Travis Cheng
+ */
 public class Menu extends JFrame implements ActionListener {
     static JMenuBar mb;
     static JMenu screenMenu;
     static JMenuItem description, rule;
     static JLabel label;
     static JFrame f;
-
+    /**
+     * Class for putting menu in menu Jfram. Menu contains own submenu
+     */
     public void createMenu() {
         Menu menu = new Menu();
 
@@ -38,6 +45,10 @@ public class Menu extends JFrame implements ActionListener {
         f.setSize(500, 500);
         f.setVisible(true);
     }
+    /**
+     * Class for when click the menu, change the text.
+     * @param e
+     */
     public void actionPerformed(ActionEvent e)
     {
         String s = e.getActionCommand();
