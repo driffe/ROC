@@ -5,12 +5,15 @@ import java.awt.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class Omok {
-    public static int outputX = 0;
-    public static int outputY = 0;
-    public static int turn = 1;
-    static RowDirection[] dirs;
-    private static void initDirs() {
+public class OmokModel {
+    private int turn = 1;
+    private RowDirection[] dirs;
+    private int[][] map;
+    OmokModel(int[][] map){
+        this.map = map;
+        initDirs();
+    }
+    private void initDirs() {
         dirs = new RowDirection[8];
         dirs[0] = (int[] coords) -> coords[1]--; // left
         dirs[1] = (int[] coords) -> coords[1]++; // right
@@ -22,23 +25,35 @@ public class Omok {
         dirs[7] = (int[] coords) -> {coords[0]++;coords[1]++;}; //down right
     }
     //Give turn to players
-    public static int playerTurn(int turn) {
+    public int playerTurn() {
         if(turn % 2 == 1) {
             return 1;
         } else {
             return 2;
         }
     }
+
+    public void updateTurn() {
+        turn++;
+    }
+
+    public int getSquare(int i, int j) {
+        return map[i][j];
+    }
+
+    public void updateSquare(int i, int j) {
+        map[i][j] = playerTurn();
+    }
+
     //Check winner if the player satisfied all winning condition.
-    public static int checkWinner(int[][] map) {
-        int check = playerTurn(turn);
-        initDirs();
+    public boolean checkWinner(int x, int y) {
+        int check = playerTurn();
         for (int i = 0; i < dirs.length; i +=2) {
-            int first = CheckRow.getOccurencesInDirection(map, new int[]{outputY, outputX}, check, dirs[i]);
-            int second = CheckRow.getOccurencesInDirection(map, new int[]{outputY, outputX}, check, dirs[i+1]);
+            int first = CheckRow.getOccurencesInDirection(map, new int[]{x, y}, check, dirs[i]);
+            int second = CheckRow.getOccurencesInDirection(map, new int[]{x, y}, check, dirs[i+1]);
             System.out.println(first + " " + second);
-            if(first+second >= 4) return 1;
+            if(first+second >= 4) return true;
         }
-        return 0;
+        return false;
     }
 }

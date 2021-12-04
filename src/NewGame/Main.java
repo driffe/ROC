@@ -18,10 +18,11 @@ public class Main {
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
         };
         JFrame frame = new JFrame("Omok");
-        Omok o = new Omok();
+        OmokModel o = new OmokModel(map);
+        OmokView board = new OmokView(mapArr, frame);
+
         Menu m = new Menu();
-        OmokBoard.board(frame);
-        OmokBoard.omakMap(mapArr, frame, map);
         m.createMenu();
+        OmokController controller = new OmokController(o, board);
     }
 }
