@@ -5,6 +5,9 @@ import java.awt.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+/**
+ * Class for model of Omok with methods regarding turns of players.
+ */
 public class OmokModel {
     private int turn = 1;
     private RowDirection[] dirs;
@@ -24,6 +27,11 @@ public class OmokModel {
         dirs[5]= (int[] coords) -> {coords[0]++;coords[1]--;}; // down left
         dirs[7] = (int[] coords) -> {coords[0]++;coords[1]++;}; //down right
     }
+
+    /**
+     * Checks to see whos turn it is
+     * @return 1 for player 1; 2 for player 2
+     */
     //Give turn to players
     public int playerTurn() {
         if(turn % 2 == 1) {
@@ -33,18 +41,38 @@ public class OmokModel {
         }
     }
 
+    /**
+     * Updates turn for each player
+     */
     public void updateTurn() {
         turn++;
     }
 
+    /**
+     * Gets square/coordinates from the Omok board
+     * @param i
+     * @param j
+     * @return
+     */
     public int getSquare(int i, int j) {
         return map[i][j];
     }
 
+    /**
+     * Updates the square/coordinate
+     * @param i
+     * @param j
+     */
     public void updateSquare(int i, int j) {
         map[i][j] = playerTurn();
     }
 
+    /**
+     * This uses getOccurencesInDirection method to find out if player has won the game.
+     * @param x
+     * @param y
+     * @return boolean
+     */
     //Check winner if the player satisfied all winning condition.
     public boolean checkWinner(int x, int y) {
         int check = playerTurn();

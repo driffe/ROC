@@ -3,6 +3,9 @@ package NewGame;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class for view of Omok
+ */
 public class OmokView {
     JButton[][] mapArr;
     JFrame frame;
@@ -12,12 +15,20 @@ public class OmokView {
         this.frame = frame;
 
     }
+
+    /**
+     * Creates the Omok board
+     */
     //Make frame with width 1280, height 828
      public void board() {
         frame.setVisible(true);
         frame.setSize(1280, 828);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
+    /**
+     * Creates the Omok map which allows for players to select any cell of their choice.
+     */
     //Map for omakMap and able to click for change color.
     public void omakMap() {
         JPanel pl = new JPanel();
@@ -37,6 +48,12 @@ public class OmokView {
         }
         frame.add(pl);
     }
+
+    /**
+     * Paints the cell red for player after selection
+     * @param i
+     * @param j
+     */
     public void paintRed(int i, int j) {
         JButton temp = mapArr[i][j];
         temp.setBackground(Color.red);
@@ -45,6 +62,12 @@ public class OmokView {
         temp.setFocusPainted(false);
         temp.setBorderPainted(false);
     }
+
+    /**
+     * Paints the cell yellow for player after selection
+     * @param i
+     * @param j
+     */
     //When button is clicked, change it with yellow(player2) color
     public void paintYellow(int i, int j) {
         JButton temp = mapArr[i][j];
