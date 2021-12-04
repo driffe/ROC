@@ -22,7 +22,8 @@ public class Main {
         OmokView board = new OmokView(mapArr, frame);
 
         Menu m = new Menu();
-        m.createMenu();
+
         OmokController controller = new OmokController(o, board);
+        m.createMenu();
     }
 }
