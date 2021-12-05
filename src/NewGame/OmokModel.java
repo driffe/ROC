@@ -50,8 +50,8 @@ public class OmokModel {
 
     /**
      * Gets square/coordinates from the Omok board
-     * @param i
-     * @param j
+     * @param i takes the value of i in that array position
+     * @param j takes the value of j in that array position
      * @return
      */
     public int getSquare(int i, int j) {
@@ -60,8 +60,8 @@ public class OmokModel {
 
     /**
      * Updates the square/coordinate
-     * @param i
-     * @param j
+     * @param i takes the value of i in that array position
+     * @param j takes the value of j in that array position
      */
     public void updateSquare(int i, int j) {
         map[i][j] = playerTurn();
@@ -69,8 +69,8 @@ public class OmokModel {
 
     /**
      * This uses getOccurencesInDirection method to find out if player has won the game.
-     * @param x
-     * @param y
+     * @param x takes the value of x
+     * @param y takes the value of y
      * @return boolean
      */
     //Check winner if the player satisfied all winning condition.

@@ -51,8 +51,8 @@ public class OmokView {
 
     /**
      * Paints the cell red for player after selection
-     * @param i
-     * @param j
+     * @param i takes the value of i in that array position
+     * @param j takes the value of j in that array position
      */
     public void paintRed(int i, int j) {
         JButton temp = mapArr[i][j];
@@ -65,8 +65,8 @@ public class OmokView {
 
     /**
      * Paints the cell yellow for player after selection
-     * @param i
-     * @param j
+     * @param i takes the value of i in that array position
+     * @param j takes the value of j in that array position
      */
     //When button is clicked, change it with yellow(player2) color
     public void paintYellow(int i, int j) {
