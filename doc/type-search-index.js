@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"NewGame","l":"CheckRow"},{"p":"NewGame","l":"Main"},{"p":"NewGame","l":"Menu"},{"p":"NewGame","l":"OmokController"},{"p":"NewGame","l":"OmokModel"},{"p":"NewGame","l":"OmokView"},{"p":"NewGame","l":"RowDirection"}]
