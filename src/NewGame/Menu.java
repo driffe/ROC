@@ -47,7 +47,7 @@ public class Menu extends JFrame implements ActionListener {
     }
     /**
      * Class for when click the menu, change the text.
-     * @param e
+     * @param e get button clicked
      */
     public void actionPerformed(ActionEvent e)
     {
