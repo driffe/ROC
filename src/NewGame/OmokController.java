@@ -19,8 +19,8 @@ public class OmokController {
     }
     /**
      * Class for checking the winner and whether it's occupied or not, everytime the players put their color on the board.
-     * @param i get i value of button position.
-     * @param j get j value of button position.
+     * @param i get i value of array button position.
+     * @param j get j value of arry button position.
      */
     public void eventButton(int i, int j) {
         if(omokModel.getSquare(i,j) != 0) {
